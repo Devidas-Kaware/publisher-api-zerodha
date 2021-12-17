@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Zerodha</title>
+</head>
+<body>
+	<script src="https://kite.trade/publisher.js?v=3"></script>
+	<script th:inline="javascript">
+
+    	 var basket = [[${basket}]];
+    	KiteConnect.ready(function() {
+        var kite = new KiteConnect("api_key");
+        // kite.add(basket);
+        basket.forEach(function (item, index) {
+        var items=item;
+		 var tradingsymbol = items.tradingSymbol;
+		 var exchange =items.exchange;
+		 var transactiontype =items.transactionType;
+		 var quantity =items.quantity;
+
+    kite.add({ 
+        "tradingsymbol": tradingsymbol, 
+        "exchange": exchange, 
+        "transaction_type": transactiontype, 
+        "order_type": "MARKET", 
+        "quantity": quantity, 
+        "variety": "NORMAL",
+        "readonly": false 
+    });});
+        kite.connect();
+    }); 
+
+        </script>
+</body>
+</html>
