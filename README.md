@@ -1,7 +1,7 @@
 ## Integration of zerodha publisher api
 
 ### Steps to start the project : 
-1. Clone the repository and import the project publisher_api_zerodha.
+1. Clone the repository and import the project publisher_api_zerodha in STS.
 2. Set the "api_key" in the publisher_api_zerodha/src/main/resources/templates/zerodhabuysell.html which is generated from Kite Connect developer account.(https://developers.kite.trade/)
 3. Run the spring boot project.
 4. Hit the curl request : "curl --location --request POST 'http://localhost:8080/buysell'"
